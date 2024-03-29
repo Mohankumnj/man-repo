@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  pre_build:
+    commands:
+      - echo "Downloading files from GitHub repository"
+      - git clone https://github.com/Mohankumnj/man-repo.git
+  build:
+    commands:
+      - echo "Build phase"
+      # You can add any additional build commands here, if needed
+  post_build:
+    commands:
+      - echo "Post-build phase"
+artifacts:
+  files:
+    - /*
+  discard-paths: yes
